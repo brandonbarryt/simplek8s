@@ -1,0 +1,15 @@
+#/specifies a predefined set of objects
+apiVersion: v1
+#/type of obeject we are making. Pods are the smallest unit we can create. Objects (containers) that need to run together
+kind: Pod
+metadata:
+    name: client-pod
+    labels:
+        component: web
+spec:
+    containers:
+            #/custom name of the container in this pod. Can be multiple
+        -   name: client
+            image: barrybt23/multi-client
+            ports:
+                - containerPort: 3000
