@@ -5,9 +5,13 @@ metadata:
 spec:
     type: NodePort
     ports:
-        -   ports: 3050
+        #/port other pods would use
+        -   port: 3050
+        #/this is the targeted pod
             targetPort: 3000
-            NodePort: 31515
+        #/this is port used to connect from the outside. If not specified it will be randomly assigned
+            nodePort: 31515
     selector:
+        #/this is arbitrary but must match the pod we want to direct to
         component: web
         
