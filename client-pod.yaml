@@ -10,6 +10,6 @@ spec:
     containers:
             #/custom name of the container in this pod. Can be multiple
         -   name: client
-            image: barrybt23/multi-client
+            image: barrybt23/multi-worker
             ports:
                 - containerPort: 3000
