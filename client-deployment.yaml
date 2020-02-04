@@ -1,16 +1,22 @@
+#/determines the objects available
 apiVersion: apps/v1
+#/this is the type of object
 kind:   Deployment
+#/names the object, arbitrary
 metadata:
-    name:   client-Deployment
+    name:   client-deployment
 spec:
+    #/number of pods to create
     replicas:   1
+    #/allows the deployment to select this component via the given label
     selector:
         matchLabels:
             component:  web
+#/defines the configuration for the pods maintained by this deployment
     template:
         metadata:
             labels:
-                component:
+                component:  web
         spec:
             containers:
                 -   name:   client
